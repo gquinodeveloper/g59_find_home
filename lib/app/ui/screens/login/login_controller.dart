@@ -5,6 +5,7 @@ import 'package:g59_find_home/app/routes/app_routes.dart';
 import 'package:g59_find_home/app/ui/widgets/load_spinner.dart';
 import 'package:g59_find_home/app/ui/widgets/snackbar.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginController extends GetxController {
   @override
@@ -38,7 +39,7 @@ class LoginController extends GetxController {
   void onChangeEmail(String value) => email = value;
   void onChangePassword(String value) => password = value;
 
-  showPassword(){
+  showPassword() {
     isObscureText.value = !isObscureText.value;
   }
 
@@ -50,20 +51,25 @@ class LoginController extends GetxController {
         password: password,
       );
       LoadSpinner.hide();
-      if(response.success){
+      if (response.success) {
         await _storageRepository.writeSession(response);
         Get.offNamed(AppRoutes.HOME);
       }
     } on DioError catch (ex) {
       Snackbar.show(
         title: ex.error,
-        message: ex.response?.data.toString()?? "No found message",
+        message: ex.response?.data.toString() ?? "No found message",
         typeMessage: 1,
       );
     }
   }
 
-  goToRegister(){
+  goToRegister() {
     Get.toNamed(AppRoutes.REGISTER);
+  }
+
+  openWhatsApp() async {
+    final Uri _url = Uri.parse('https://youtube.com');//https://wa.me/51958346475?text=Hola
+    if (!await launchUrl(_url)) throw 'Could not launch $_url';
   }
 }

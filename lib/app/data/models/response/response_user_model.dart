@@ -23,13 +23,4 @@ class ResponseUserModel {
         email: json["email"],
         password: json["password"],
     );
-
-    Map<String, dynamic> toJson() => {
-        "idUser": idUser,
-        "name": name,
-        "lastname": lastname,
-        "address": address,
-        "email": email,
-        "password": password,
-    };
 }

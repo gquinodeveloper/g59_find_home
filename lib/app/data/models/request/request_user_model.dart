@@ -12,15 +12,7 @@ class RequestUserModel {
     String? adress;
     String? email;
     String? password;
-
-    factory RequestUserModel.fromJson(Map<String, dynamic> json) => RequestUserModel(
-        name: json["name"],
-        lastname: json["lastname"],
-        adress: json["adress"],
-        email: json["email"],
-        password: json["password"],
-    );
-
+    
     Map<String, dynamic> toJson() => {
         "name": name,
         "lastname": lastname,

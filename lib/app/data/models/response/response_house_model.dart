@@ -53,23 +53,4 @@ class ResponseHouseModel {
         utilities: json["utilities"],
         aviable: json["aviable"],
     );
-
-    Map<String, dynamic> toJson() => {
-        "idHouse": idHouse,
-        "name": name,
-        "idPhoto": idPhoto,
-        "Photo": photo,
-        "user": user,
-        "avatar": avatar,
-        "rating": rating,
-        "location": location,
-        "price": price,
-        "reviews": reviews,
-        "bedroom": bedroom,
-        "menu": menu,
-        "bathroom": bathroom,
-        "description": description,
-        "utilities": utilities,
-        "aviable": aviable,
-    };
 }

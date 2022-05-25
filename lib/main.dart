@@ -3,9 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:g59_find_home/app/core/utils/injection_dependecy.dart';
 import 'package:g59_find_home/app/routes/app_pages.dart';
 import 'package:g59_find_home/app/routes/app_routes.dart';
+import 'package:g59_find_home/app/services/app_push_notifications.dart';
 import 'package:get/get.dart';
 
 void main() {
+  //WidgetsFlutterBinding.ensureInitialized();
+  //AppPushNotificationService.initializeApp();
   InjectionDependency.load();
   runApp(const MyApp());
 }

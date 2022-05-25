@@ -65,13 +65,15 @@ class FormLogin extends StatelessWidget {
                     fontColor: Colors.black45,
                     suffixIcon: GestureDetector(
                       onTap: _.showPassword,
-                      child: _.isObscureText.value? Icon(
-                        Icons.visibility_off_rounded,
-                        color: AppTheme.light,
-                      ) :Icon(
-                        Icons.visibility,
-                        color: AppTheme.light,
-                      ),
+                      child: _.isObscureText.value
+                          ? Icon(
+                              Icons.visibility_off_rounded,
+                              color: AppTheme.light,
+                            )
+                          : Icon(
+                              Icons.visibility,
+                              color: AppTheme.light,
+                            ),
                     ),
                     onChanged: _.onChangePassword,
                   ),
@@ -85,12 +87,17 @@ class FormLogin extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Text(
-                      "Forgot password",
-                      style: Theme.of(context)
-                          .textTheme
-                          .subtitle2
-                          ?.copyWith(color: Colors.black54),
+                    GestureDetector(
+                      onTap: () {
+                        _.openWhatsApp();
+                      },
+                      child: Text(
+                        "Forgot password",
+                        style: Theme.of(context)
+                            .textTheme
+                            .subtitle2
+                            ?.copyWith(color: Colors.black54),
+                      ),
                     ),
                     GestureDetector(
                       onTap: _.goToRegister,
